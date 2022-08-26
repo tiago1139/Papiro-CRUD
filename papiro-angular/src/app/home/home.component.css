@@ -1,15 +1,18 @@
-
+.wrapper {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
 .search-box-container {
     display:flex;
     align-items: center;
-    position: fixed;
     top: 45px;
     width: 30%;
     height: 40px;
-    left: 35%;
-    text-align: center;
     background-color: white;
+    margin-right: 10px;
     
 }
 
@@ -26,9 +29,15 @@
 }
 
 .search-button {
-    display: flex;
+   border-radius: 10px;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   border-style: none;
+   width: 100px;
+   cursor: pointer;
+   color: white;
+   background-color: #10bbd5;
 }
 
-.search-button-container {
-    display: inline-block;
+.search-button:hover {
+    filter: brightness(110%);
 }

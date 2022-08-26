@@ -1,14 +1,19 @@
+.nav-bar {
+  position: relative;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    border: 1px solid #e7e7e7;
+    overflow-x: hidden;
+    border: 2px solid #e7e7e7;
     background-color: #be9d6a;
     height: 40px;
-    
     top: 0;
-    width: 100%;
+    width: auto;
+    
   }
   
   li {
@@ -18,6 +23,7 @@ ul {
 
   li:last-child  {
     float: right;
+    border-right-style: none;
   }
   
   li a {
@@ -37,13 +43,7 @@ ul {
   }
 
 
-
-.help {
-    justify-content: space-between;
-}
-
 .help-icon {
-    padding-right: 5px;
     align-items: center;
 }
 
