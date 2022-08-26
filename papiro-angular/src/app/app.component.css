@@ -1,0 +1,22 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+.title-app {
+    font-family: 'Silkscreen', cursive;
+    font-size: xx-large;
+    display: inline-block;
+    width: 100%;
+
+}
+
+mat-toolbar {
+    border-radius: 25px 0 25px 0;
+    color: blueviolet;
+}
+
+.toolbar {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
