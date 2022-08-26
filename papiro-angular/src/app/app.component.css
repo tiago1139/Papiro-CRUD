@@ -1,22 +1,76 @@
-.example-spacer {
-    flex: 1 1 auto;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: #be9d6a;
+    height: 40px;
+    
+    top: 0;
+    width: 100%;
+  }
+  
+  li {
+    float: left;
+    border-right: 1px solid #bbb;
   }
 
-.title-app {
-    font-family: 'Silkscreen', cursive;
-    font-size: xx-large;
-    display: inline-block;
-    width: 100%;
+  li:last-child  {
+    float: right;
+  }
+  
+  li a {
+    display: inline-flex;
+    vertical-align: middle;
+    color: white;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  li a:hover:not(.logo) {
+    background-color: black;
+    color: white;
+    
+  }
 
+
+
+.help {
+    justify-content: space-between;
 }
 
-mat-toolbar {
-    border-radius: 25px 0 25px 0;
-    color: blueviolet;
+.help-icon {
+    padding-right: 5px;
+    align-items: center;
 }
 
-.toolbar {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+.account {
+    border-left: 1px solid #bbb;
+    border-right-style: none;
 }
+
+.account-icon {
+    padding-right: 5px;
+}
+
+.logo-icon {
+    width: 25px;
+    padding-right: 10px;
+}
+
+.logo {
+    position: absolute;
+    left: 42%;
+    text-transform: uppercase;
+    font-family: "Times New Roman", Times, serif;
+    font-size: large;
+
+    
+}
+
+
+
+  
