@@ -1,43 +1,78 @@
-.wrapper {
-    margin-top: 10px;
+
+
+.block-wrap {
+    margin: auto;
+    margin-bottom: 5px;
+    margin-left: 100px;
+    width: 1000px;
+    height: 100%;
+    justify-content: center;
+    
+   
+    
+}
+
+.block-header {
+    margin-top: 5px;
+    margin-left: 1%;
+    width: 98%;
+    height: 35px;
+   
+    border-bottom: 1px solid rgb(186, 202, 223);
+    
+}
+
+.block-title {
+    font-weight:500;
+
+}
+
+
+
+.card {
     width: 100%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+
+}
+
+
+.card:hover {
+    transform: scale(1.2);
+    z-index: 2;
+}
+
+.cards-container {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    width: 98%;
+    margin-left: 1%;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    
+    
+}
+
+.cards-container a {
+    width: 15%;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.card-img-container {
+    margin-top: 5%;
     display: flex;
     justify-content: center;
 }
 
-.search-box-container {
-    display:flex;
-    align-items: center;
-    top: 45px;
-    width: 30%;
-    height: 40px;
-    background-color: white;
-    margin-right: 10px;
+.card-img {
+    width: 60%;
+}
+
+.card-info {
     
-}
-
-.search-box {
-    width: 100%;
-    border-style: none;
-    outline: none;
-}
-
-
-.search-icon {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.search-button {
-   border-radius: 10px;
-   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-   border-style: none;
-   width: 100px;
-   cursor: pointer;
-   color: white;
-   background-color: #10bbd5;
-}
-
-.search-button:hover {
-    filter: brightness(110%);
+    margin-left: 5px;
+    
 }

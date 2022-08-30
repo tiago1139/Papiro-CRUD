@@ -1,1 +1,25 @@
-<p>book-detail works!</p>
+<div class="block-wrap">
+    <div class="block-header">
+        <h2 class="block-title">Livro - Detalhes</h2>
+    </div>
+    
+    <div class="cards-container" *ngIf="book">
+
+        <div class="book-cover-container">
+            <img src={{book.cover}} alt="" class="book-cover">
+        </div>
+
+        <div class="book-info">
+            <div class="book-title">
+                <p>Titulo : {{book.title}}</p>
+            </div>
+    
+            <div class="book-author">
+                <p>Autor : {{book.author}}</p>
+            </div>
+
+        </div>
+  
+    </div>
+  
+  </div>

@@ -9,4 +9,33 @@
 
 </div>
 
-<router-outlet></router-outlet>
+<div class="wrapper">
+  <div class="search-box-container">
+      <mat-icon class="search-icon">search</mat-icon>
+      <input type="text" placeholder="Procure Livros por Titulo / Autor / ISBN" class="search-box">
+    
+  </div>
+  
+  <button class="search-button">Procurar</button>
+
+</div>
+
+<div class="content-box">
+  <div class="grid-container">
+  
+    <div class="side-bar">
+        <div >
+          <a routerLink="/books">Todos</a>
+        </div>
+        <div>
+          <a routerLink="/categories">Categorias</a>
+        </div>
+        <div>
+          <a routerLink="/favorites">Favoritos</a>
+        </div>
+    </div>
+    <router-outlet class="route"></router-outlet>
+    
+  </div>
+
+</div>
