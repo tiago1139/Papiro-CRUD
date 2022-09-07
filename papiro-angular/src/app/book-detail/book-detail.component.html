@@ -11,17 +11,18 @@
 
         <div class="book-info">
             <div class="book-title">
-                <p>Titulo : {{book.title}}</p>
+                <p>Titulo : <span>{{book.title}}</span></p>
+                
             </div>
     
             <div class="book-author">
-                <p>Autor : {{book.author}}</p>
+                <p>Autor : <span>{{book.author}}</span></p>
             </div>
 
             <div class="book-rate">
-                <p>Rate this book: </p>
+                <h3>Rate this book: </h3>
                 <ngb-rating [(rate)]="rate" [max]="5" [readonly]="blocked" style="color: #FFC107; font-size: 30px;"></ngb-rating>
-                <div *ngIf="user">
+                <div *ngIf="user" class="rating-buttons">
                     <button *ngIf="!blocked" (click)="block()">Bloquear</button>
                     <button *ngIf="blocked" (click)="unblock()">Desbloquear</button>
                     <button (click)="avaliar()">Avaliar</button>
@@ -30,7 +31,21 @@
                 
             </div>
 
+            <div class="book-description">
+                <h4>Descrição:</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Phasellus eget posuere nunc. Mauris vel finibus purus. 
+                    Maecenas vulputate, magna vel luctus consequat, velit turpis dapibus magna,
+                    id cursus nisi ante sit amet turpis. Integer laoreet sagittis lorem a interdum.
+                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                    Integer risus erat, cursus vel hendrerit eget, cursus vel lacus. Nulla vitae tristique lectus, quis sollicitudin augue.
+                    Donec rutrum interdum est. Aenean venenatis, leo non pellentesque dictum, sapien risus blandit leo, sit amet ultricies diam diam a velit.
+                    Sed eget justo ligula. Donec rhoncus, arcu sed pulvinar consectetur, nisl dui condimentum quam, sed iaculis dui sapien sed diam. Mauris pulvinar ipsum ligula, vel laoreet enim pellentesque ut.
+                    Aenean tristique nisl ut mi sagittis dignissim.
+                </p>
+            </div>
         </div>
+
   
     </div>
   

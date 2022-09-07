@@ -42,6 +42,11 @@ ul {
     
   }
 
+  .logout:hover  {
+    background-color: #10bbd5;
+    color: white;
+  }
+
 
 .help-icon {
     align-items: center;
@@ -56,6 +61,7 @@ ul {
 
 .account-icon {
     padding-right: 5px;
+    margin-right: 5px;
 }
 
 .logo-icon {
@@ -199,4 +205,17 @@ transform: scale(1.25, 1.25);
   flex-direction: column;
   height: 100%;
   
+}
+
+.logout {
+  cursor: pointer;
+  height: 100%;
+  color: white;
+  width: 70px;
+  justify-content: center;
+  text-align: center;
+  vertical-align: middle;
+  transition: 0.3s;
+  float: right;
+  border-left: 1px solid #ddd;
 }

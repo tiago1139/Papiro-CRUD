@@ -12,8 +12,8 @@
                     <input required matInput formControlName="password">
                 </mat-form-field>
                 <div class="form-group">
-                    <button [disabled]="loading || loginForm.invalid" class="btn btn-primary">
-                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    <button [disabled]="loadingLogin || loginForm.invalid" class="btn btn-primary">
+                        <span *ngIf="loadingLogin" class="spinner-border spinner-border-sm mr-1"></span>
                         Login
                     </button>
 
@@ -47,8 +47,8 @@
                     
                 </mat-form-field>
                 <div class="form-group">
-                    <button [disabled]="loading || registerForm.invalid" class="btn btn-primary" (click)="register()">
-                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    <button [disabled]="loadingRegister || registerForm.invalid" class="btn btn-primary" (click)="register()">
+                        <span *ngIf="loadingRegister" class="spinner-border spinner-border-sm mr-1"></span>
                         Criar
                     </button>
 

@@ -42,9 +42,9 @@ export class AccountService {
 
   logout() {
       // remove user from local storage and set current user to null
-      localStorage.removeItem('user');
+      sessionStorage.removeItem('user');
       //this.userSubject.next(null);
-      this.router.navigate(['/account/login']);
+      this.router.navigate(['/login']);
   }
 
   register(user: User) {
@@ -59,17 +59,17 @@ export class AccountService {
   }
 
   getById(id: string) {
-      return this.http.get<User>(`${environment.apiUrl}/users/${id}`);
+      return this.http.get<User>(`${environment.apiUrl}/users/id/${id}`);
   }
 
   getByName(name: string): Observable<User> {
     
-    return this.http.get<User>(`${environment.apiUrl}/users/${name}`);
+    return this.http.get<User>(`${environment.apiUrl}/users/name/${name}`);
   }
 
 
   delete(id: string) {
-      return this.http.delete(`${environment.apiUrl}/users/${id}`)
+      return this.http.delete(`${environment.apiUrl}/users/id/${id}`)
           .pipe(map(x => {
               // auto logout if the logged in user deleted their own record
               if (id == this.userValue._id) {

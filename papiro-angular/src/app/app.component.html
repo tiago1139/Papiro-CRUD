@@ -3,7 +3,9 @@
     <li><a href="" class="home"><mat-icon>home</mat-icon></a></li>
     <li><a href="" class="help"><mat-icon class="help-icon">help_outline</mat-icon></a></li>
     <li><a href="" class="logo"><img src="favicon.ico" alt="" class="logo-icon">Papiro Reviews</a></li>
-    <li><a routerLink="/login" class="account"><mat-icon class="account-icon">account_circle</mat-icon> Entrar / Registrar</a></li>
+    <li *ngIf="!logged"><a routerLink="/login" class="account"><mat-icon class="account-icon">login</mat-icon> Entrar / Registrar</a></li>
+    <li *ngIf="logged" class="logout" (click)="logout()"><mat-icon class="logout-icon">logout</mat-icon>Sair</li>
+    <li *ngIf="logged"><a routerLink="/account" class="account"><mat-icon class="account-icon">account_circle</mat-icon> Conta</a></li>
     
   </ul>
 

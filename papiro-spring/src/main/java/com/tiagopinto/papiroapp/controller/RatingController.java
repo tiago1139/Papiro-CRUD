@@ -50,9 +50,18 @@ public class RatingController {
     }
 
     @PutMapping("/rating/{id}")
-    public ResponseEntity<Rating> updateBook(@PathVariable Long id, @RequestBody Rating rating) throws ResourceNotFoundException {
+    public ResponseEntity<Rating> updateRating(@PathVariable Long id, @RequestBody Rating rating) throws ResourceNotFoundException {
 
         return ResponseEntity.status(HttpStatus.OK)
                 .body(ratingRepository.save(rating));
+    }
+
+    @DeleteMapping("/rating/{id}")
+    public ResponseEntity<Void> deleteRating(@PathVariable Long id) {
+
+        ratingRepository.deleteById(id);
+
+        return ResponseEntity.noContent().build();
+
     }
 }

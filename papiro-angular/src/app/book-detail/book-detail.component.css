@@ -44,10 +44,10 @@
 .cards-container {
     display: flex;
     flex-flow: row;
-    flex-wrap: wrap;
+    
     width: 98%;
     margin-left: 1%;
-    margin-top: 5px;
+    margin-top: 10px;
     padding-bottom: 5px;
     
     
@@ -64,6 +64,7 @@
 }
 
 .book-info {
+    
     display: flex;
     flex-direction: column;
 }
@@ -82,4 +83,55 @@
     
     margin-left: 5px;
     
+}
+
+.book-cover-container {
+    margin-right: 30px;
+}
+
+.book-description p {
+    text-align: justify;
+    font-weight: 200 !important;
+}
+
+.book-description {
+    margin-top: 20px;
+}
+
+.book-description h4 {
+    font-weight: 500;
+}
+
+.book-title {
+    display: inline-block;
+    justify-content: baseline;
+}
+
+.book-author p {
+    font-weight: 500;
+    font-size: large;
+
+}
+
+.book-author span {
+    font-weight: 300;
+    font-size: medium;
+    margin-left: 10px;
+}
+
+.book-title p {
+    font-weight: 500;
+    font-size: large;
+
+}
+
+.book-title span {
+    font-weight: 300;
+    font-size: medium;
+    margin-left: 10px;
+}
+
+.rating-buttons {
+    right: 50%;
+    float: right;
 }

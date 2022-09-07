@@ -95,4 +95,13 @@ public class BookController {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(bookRepository.save(book));
     }
+
+    @DeleteMapping("/book/{id}")
+    public ResponseEntity<Void> deleteRating(@PathVariable Long id) {
+
+        bookRepository.deleteById(id);
+
+        return ResponseEntity.noContent().build();
+
+    }
 }

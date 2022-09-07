@@ -13,7 +13,8 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   registerForm: FormGroup;
-  loading = false;
+  loadingLogin = false;
+  loadingRegister = false;
   submitted = false;
   logged = true;
   registed = false;
@@ -52,7 +53,7 @@ export class LoginComponent implements OnInit {
         return;
     }
 
-    this.loading = true;
+    this.loadingLogin = true;
     this.accountService.login(this.loginForm.get('username')?.value, this.loginForm.get('password')?.value);
   }
 
@@ -61,7 +62,7 @@ export class LoginComponent implements OnInit {
       console.log("REGISTER INVALID");
       return;
     }
-
+    this.loadingRegister = true;
     this.accountService.getByName(this.registerForm.get('username')?.value)
     .subscribe(u => {
       if(!u) {
