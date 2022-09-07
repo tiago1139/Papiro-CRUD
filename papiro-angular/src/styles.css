@@ -26,3 +26,13 @@ app-root {
     text-align: center;
     color: black;
   }
+
+  .red-snackbar{
+    background-color: rgb(153, 50, 50);
+    color:lightgoldenrodyellow;
+  }
+
+  .green-snackbar{
+    background-color: rgb(6, 160, 1);
+    color:lightgoldenrodyellow;
+  }

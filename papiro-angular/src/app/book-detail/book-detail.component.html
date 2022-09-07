@@ -18,6 +18,18 @@
                 <p>Autor : {{book.author}}</p>
             </div>
 
+            <div class="book-rate">
+                <p>Rate this book: </p>
+                <ngb-rating [(rate)]="rate" [max]="5" [readonly]="blocked" style="color: #FFC107; font-size: 30px;"></ngb-rating>
+                <div *ngIf="user">
+                    <button *ngIf="!blocked" (click)="block()">Bloquear</button>
+                    <button *ngIf="blocked" (click)="unblock()">Desbloquear</button>
+                    <button (click)="avaliar()">Avaliar</button>
+
+                </div>
+                
+            </div>
+
         </div>
   
     </div>

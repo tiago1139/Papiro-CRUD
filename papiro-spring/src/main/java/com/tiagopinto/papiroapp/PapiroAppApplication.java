@@ -14,22 +14,5 @@ public class PapiroAppApplication {
 		SpringApplication.run(PapiroAppApplication.class, args);
 	}
 
-	@Bean
-	CommandLineRunner initDataBase(BookRepository bookRepository) {
-		return args -> {
-			bookRepository.deleteAll();
-
-			for (int i = 0; i < 20; i++) {
-				Book b = new Book();
-				b.setTitle("Book "+i);
-				b.setAuthor("Tiago");
-				b.setCover("https://angularforms.dev/assets/images/angular-form-essentials-book.png");
-
-				bookRepository.save(b);
-			}
-
-
-		};
-	}
 
 }

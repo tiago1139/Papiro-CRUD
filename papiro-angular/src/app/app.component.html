@@ -3,7 +3,7 @@
     <li><a href="" class="home"><mat-icon>home</mat-icon></a></li>
     <li><a href="" class="help"><mat-icon class="help-icon">help_outline</mat-icon></a></li>
     <li><a href="" class="logo"><img src="favicon.ico" alt="" class="logo-icon">Papiro Reviews</a></li>
-    <li><a href="" class="account"><mat-icon class="account-icon">account_circle</mat-icon>Entrar / Registrar</a></li>
+    <li><a routerLink="/login" class="account"><mat-icon class="account-icon">account_circle</mat-icon> Entrar / Registrar</a></li>
     
   </ul>
 
@@ -33,9 +33,13 @@
         <div>
           <a routerLink="/favorites">Favoritos</a>
         </div>
+        <div>
+          <a routerLink="/add-book">Criar Livro</a>
+        </div>
     </div>
     <router-outlet class="route"></router-outlet>
     
   </div>
 
 </div>
+
