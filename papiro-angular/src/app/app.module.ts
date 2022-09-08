@@ -15,6 +15,7 @@ import { CreateBookComponent } from './create-book/create-book.component';
 import { HomeComponent } from './home/home.component';
 import { AppMaterialModule } from './shared/app-material/app-material.module';
 import { LoginComponent } from './login/login.component';
+import { AccountComponent } from './account/account.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { LoginComponent } from './login/login.component';
     AdminComponent,
     CreateBookComponent,
     LoginComponent,
+    AccountComponent,
   ],
   imports: [
     BrowserModule,

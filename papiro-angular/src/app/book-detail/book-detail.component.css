@@ -134,4 +134,14 @@
 .rating-buttons {
     right: 50%;
     float: right;
+    
+}
+
+.rating-buttons button {
+    margin-right: 10px;
+}
+
+.deleteBook {
+    margin-top: 20px;
+    text-align: center;
 }

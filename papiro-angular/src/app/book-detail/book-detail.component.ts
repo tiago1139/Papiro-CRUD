@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
+
 
 import { Book } from '../models/book';
 import { Rating } from '../models/rating';
 import { Convert, User } from '../models/user';
 import { BooksService } from '../services/books.service';
 import { RatingService } from '../services/rating.service';
+
+declare var window: any;
 
 @Component({
   selector: 'app-book-detail',
@@ -22,11 +25,21 @@ export class BookDetailComponent implements OnInit {
 
   rate: number;
 
+  admin: boolean;
+
+  formModal: any;
+
   constructor(
     private bookService: BooksService,
     private ratingService: RatingService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {
+    if(sessionStorage.getItem('admin')) {
+      this.admin = true;
+    } else {
+      this.admin= false;
+    }
     this.rate = 3;
     this.getUser();
     this.getBook().subscribe(book => {
@@ -48,6 +61,9 @@ export class BookDetailComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.formModal = new window.bootstrap.Modal(
+      document.getElementById('myModal')
+    );
   }
 
   async getUser() {
@@ -123,6 +139,24 @@ export class BookDetailComponent implements OnInit {
   unblock() {
     this.blocked = false;
   }
+
+  deleteBook() {
+    this.bookService.deleteBook(this.book._id)
+    .subscribe(res => {
+      console.log(res);
+      this.formModal.hide();
+      this.router.navigate(['/']);
+    });
+  }
+
+  openModal() {
+    this.formModal.show();
+  }
+
+  closeModal() {
+    this.formModal.hide();
+  }
+
 
 
 }

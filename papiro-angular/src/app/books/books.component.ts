@@ -14,20 +14,25 @@ import { RatingService } from '../services/rating.service';
 })
 export class BooksComponent implements OnInit {
   currentRate = 0;
-  books: Observable<Book[]>;
+  books!: Book[];
 
   constructor(
     private booksService: BooksService,
     private ratingService: RatingService,
     private sanitizer: DomSanitizer
   ) {
-    this.books = this.booksService.getAllBooks();
+    this.booksService.getAllBooks().subscribe(books => {
+      this.books = books;
+      for(let b of this.books) {
+        this.getRating(b)
+      }
+    });
    }
 
   ngOnInit(): void {
   }
 
-  getRating(book:Book): number {
+  getRating(book:Book) : any {
     let result = 0;
     let ratings : Rating[];
     this.ratingService.getRatingsByBook(book)
@@ -37,9 +42,12 @@ export class BooksComponent implements OnInit {
         result += r.value;
       }
       result = result/ratings.length;
+      console.log("RANK : "+result);
+      book.rank = result;
+      console.log("RANK FINAL : "+book.rank);
     });
 
-    return result;
+
   }
 
   safeUrl(url:string) : SafeUrl {

@@ -9,12 +9,19 @@ import { AccountService } from './services/account.service';
 export class AppComponent implements OnInit{
   title = 'papiro-angular';
   logged : boolean;
+  admin: boolean;
 
   constructor(private accountService: AccountService) {
     if (sessionStorage.getItem('user')) {
       this.logged = true;
+      if(sessionStorage.getItem('admin')) {
+        this.admin = true;
+      } else {
+        this.admin = false;
+      }
     } else {
       this.logged = false;
+      this.admin = false;
     }
   }
 
@@ -28,5 +35,7 @@ export class AppComponent implements OnInit{
 
   logout() {
     this.accountService.logout();
+    this.logged = false;
+    this.admin = false;
   }
 }

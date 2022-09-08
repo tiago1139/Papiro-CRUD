@@ -42,8 +42,8 @@ public class Book {
 
 
     @JsonProperty("rank")
-    @Column(columnDefinition = "integer default 0")
-    private Integer rank;
+    @Column(columnDefinition = "double default 0.0")
+    private Double rank;
 
     @JsonProperty("cover")
     @Column(nullable = false)

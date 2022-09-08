@@ -2,17 +2,20 @@
     <div class="card">
         <h4 class="card-header">Login</h4>
         <div class="card-body">
-            <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <form [formGroup]="loginForm">
                 <mat-form-field appearance="fill">
                     <mat-label>Username</mat-label>
                     <input required matInput formControlName="username">
                 </mat-form-field>
                 <mat-form-field appearance="fill">
                     <mat-label>Password</mat-label>
-                    <input required matInput formControlName="password">
+                    <input matInput [type]="hide ? 'password' : 'text'"  formControlName="password">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
                 </mat-form-field>
                 <div class="form-group">
-                    <button [disabled]="loadingLogin || loginForm.invalid" class="btn btn-primary">
+                    <button [disabled]="loadingLogin || loginForm.invalid" class="btn btn-primary" (click)="login()">
                         <span *ngIf="loadingLogin" class="spinner-border spinner-border-sm mr-1"></span>
                         Login
                     </button>

@@ -44,4 +44,9 @@ export class BooksService {
     const url = `${this.bookUrl}/${id}`;
     return this.httpClient.put(url, book, this.httpOptions);
   }
+
+  deleteBook(id: string) {
+    const url = `${this.bookUrl}/${id}`;
+    return this.httpClient.delete(url, this.httpOptions);
+  }
 }

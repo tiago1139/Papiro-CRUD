@@ -18,7 +18,7 @@
     
   </div>
   
-  <button class="search-button">Procurar</button>
+  <button type="button" class="btn btn-primary">Procurar</button>
 
 </div>
 
@@ -35,7 +35,7 @@
         <div>
           <a routerLink="/favorites">Favoritos</a>
         </div>
-        <div>
+        <div *ngIf="admin">
           <a routerLink="/add-book">Criar Livro</a>
         </div>
     </div>

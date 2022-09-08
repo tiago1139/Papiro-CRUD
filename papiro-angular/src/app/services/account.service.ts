@@ -30,9 +30,12 @@ export class AccountService {
     this.getByName(username).subscribe(u => {
       temp = u;
       if(temp && temp.password == password) {
+        if(temp.username == 'admin') {
+          sessionStorage.setItem('admin', 'admin');
+        }
         sessionStorage.setItem('user', JSON.stringify(u));
         this.userSubject.next(u);
-        this.router.navigate(['/']);
+        window.location.href = 'http://localhost:4200/';
 
       }
     });
@@ -43,6 +46,7 @@ export class AccountService {
   logout() {
       // remove user from local storage and set current user to null
       sessionStorage.removeItem('user');
+      sessionStorage.removeItem('admin');
       //this.userSubject.next(null);
       this.router.navigate(['/login']);
   }

@@ -14,9 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.nio.file.*;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,9 +24,7 @@ import java.util.Optional;
 @CrossOrigin("http://localhost:4200")
 public class BookController {
 
-    private static String imagePath = ".."+ File.separator + ".." + File.separator+
-                                        ".." + File.separator+
-                                        "resources"+ File.separator + "images";
+    private static String imagePath = Paths.get("src/main/resources/images").toAbsolutePath().toString();
     private BookRepository bookRepository;
 
     @GetMapping("/books")
@@ -60,11 +56,10 @@ public class BookController {
             if(!file.isEmpty()) {
                 byte[] bytes = file.getBytes();
                 Path currentDir = Paths.get(".");
-                String temp = Paths.get("src/main/resources/images").toAbsolutePath().toString();
                 long rows = bookRepository.findLastId();
                 System.out.println(rows);
 
-                Path path = Paths.get(temp+File.separator
+                Path path = Paths.get(imagePath+File.separator
                         +String.valueOf(rows+1)+"_cover.jpg");
 
 
@@ -97,9 +92,28 @@ public class BookController {
     }
 
     @DeleteMapping("/book/{id}")
-    public ResponseEntity<Void> deleteRating(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
 
         bookRepository.deleteById(id);
+        //Delete book cover jpg
+        try {
+            Path path = Paths.get(imagePath+File.separator
+                    +String.valueOf(id)+"_cover.jpg");
+            File f = new File(String.valueOf(path));
+            Files.deleteIfExists(f.toPath());
+        }
+        catch (NoSuchFileException e) {
+            System.out.println(
+                    "No such file/directory exists");
+        }
+        catch (DirectoryNotEmptyException e) {
+            System.out.println("Directory is not empty.");
+        }
+        catch (IOException e) {
+            System.out.println("Invalid permissions.");
+        }
+
+        System.out.println("Deletion successful.");
 
         return ResponseEntity.noContent().build();
 
